@@ -1,0 +1,53 @@
+﻿
+
+
+@*@model IEnumerable<TrashPickup.Models.Customer>*@
+@model MunicipalTrashCollection.Models.Address
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Customers</h2>
+
+
+<table class="table table-bordered table-hover ">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Pick Up Day</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.Customer.FirstName</td>
+            <td>@Model.Customer.LastName</td>
+            <td>@Model.StreetName</td>
+            <td>@Model.Day.Name</td>
+        </tr>
+
+    </tbody>
+
+
+
+
+
+    @*<tbody>
+
+                @foreach (var value in Model)
+                {
+                    <tr>
+                        <td>@value.Customer.FirstName</td>
+                        <td>@value.Customer.LastName</td>
+                       <td>@value.StreetName</td>
+
+
+        </tr>
+                }
+        </tbody>*@
+</table>   
