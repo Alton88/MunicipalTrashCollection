@@ -13,21 +13,23 @@ namespace MunicipalTrashCollection.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: TrashCollecter
         public ActionResult Index()
-        {           
+        {
+            var addresses = db.Addresses.ToList();
             if(User.IsInRole("TrashCollector") || User.IsInRole("Admin"))
             return View();
             return View("ReadOnly");
         }
-        public ActionResult Route(string zip)
+        [HttpPost]
+        public ActionResult Route(Address address)
         {
-            if (zip == null)
+            if (address.ZipCode == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             List<Address> addresses = db.Addresses.ToList();
             List<Address> stops = new List<Address>();
-            foreach (Address address in addresses) {
-                if (zip == address.ZipCode) { stops.Add(address); }
+            foreach (Address a in addresses) {
+                if (a.ZipCode == address.ZipCode) { stops.Add(address); }
             }
             return View(stops);
 
