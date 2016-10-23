@@ -17,7 +17,9 @@ namespace MunicipalTrashCollection.Controllers
         // GET: Administrator
         public ActionResult Index()
         {
+            if (User.IsInRole("Admin"))
             return View(db.Customers.ToList());
+            return Redirect("Home");
         }
 
         // GET: Administrator/Details/5

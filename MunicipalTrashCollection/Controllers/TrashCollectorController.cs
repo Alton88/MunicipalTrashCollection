@@ -11,7 +11,9 @@ namespace MunicipalTrashCollection.Controllers
         // GET: TrashCollecter
         public ActionResult Index()
         {
+            if(User.IsInRole("TrashCollector") || User.IsInRole("Admin"))
             return View();
+            return Redirect("Home");
         }
     }
 }
