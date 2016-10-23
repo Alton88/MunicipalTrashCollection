@@ -19,7 +19,7 @@ namespace MunicipalTrashCollection.Controllers
         {
             if (User.IsInRole("Admin"))
             return View(db.Customers.ToList());
-            return Redirect("Home");
+            return View("ReadOnly");
         }
 
         // GET: Administrator/Details/5

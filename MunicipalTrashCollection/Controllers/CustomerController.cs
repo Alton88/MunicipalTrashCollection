@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using MunicipalTrashCollection.Models;
 using Microsoft.AspNet.Identity;
+using System.Net;
 
 namespace MunicipalTrashCollection.Controllers
 {
@@ -22,6 +23,38 @@ namespace MunicipalTrashCollection.Controllers
             var userEmail = User.Identity.Name;
             var customer = db.Addresses.Include(a => a.Customer).Include(d => d.Day).Single(c => c.Customer.EmailAddress == userEmail);
 
+            return View(customer);
+        }
+        public ActionResult Edit()
+        {
+            var userEmail = User.Identity.Name;
+            var customer = db.Addresses.Include(a => a.Customer).Include(d => d.Day).Single(c => c.Customer.EmailAddress == userEmail);
+
+            return View();
+        }
+        public ActionResult Edit(int? id)
+        {
+            //[Bind(Include = "Id,FirstName,LastName,PhoneNumber,EmailAddress")] Customer customer
+            if (ModelState.IsValid)
+            {
+                //db.Customers.Add(customer);
+                //db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View();
+        }
+        public ActionResult EditCustomerDay(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
             return View(customer);
         }
     }

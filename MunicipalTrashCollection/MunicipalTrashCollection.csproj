@@ -303,6 +303,11 @@
     <Content Include="Views\Administrator\Index.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\TrashCollector\Index.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\EditCustomerDay.cshtml" />
+    <Content Include="Views\TrashCollector\ReadOnly.cshtml" />
+    <Content Include="Views\Administrator\ReadOnly.cshtml" />
+    <Content Include="Views\TrashCollector\Route.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

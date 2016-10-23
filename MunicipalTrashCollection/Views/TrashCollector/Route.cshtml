@@ -1,0 +1,19 @@
+﻿@*@model MunicipalTrashCollection.Models.Address*@
+@model IEnumerable<MunicipalTrashCollection.Models.Address>
+
+@{
+    ViewBag.Title = "Route";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Route</h2>
+
+<p>Addresses on Route</p>
+
+<ul>
+    @foreach (var address in Model)
+    {
+        <li>@($"{address.StreetName} {address.City} {address.ZipCode}")</li>
+    }
+
+</ul>

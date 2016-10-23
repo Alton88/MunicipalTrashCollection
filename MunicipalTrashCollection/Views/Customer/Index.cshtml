@@ -54,23 +54,16 @@
     </tbody>
 </table>
 
-<div class="form-inline">
-    <p>Change PickUp Date</p>
+@*<div class="form-inline">
+    <h3>Change PickUp Date</h3>
     <input type="date">
-    </div>
+    </div>*@
 
+@*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Edit" class="btn btn-default" />
+        </div>                                                                   
+    </div>*@
+    
+@Html.ActionLink("Edit Customer Account", "EditCustomerDay", new { id = Model.Customer.Id }) 
 
-
-    @*<tbody>
-
-                @foreach (var value in Model)
-                {
-                    <tr>
-                        <td>@value.Customer.FirstName</td>
-                        <td>@value.Customer.LastName</td>
-                       <td>@value.StreetName</td>
-
-
-        </tr>
-                }
-        </tbody>*@
