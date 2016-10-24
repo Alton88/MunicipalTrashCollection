@@ -86,3 +86,5 @@ c:\users\alton\documents\visual studio 2015\Projects\MunicipalTrashCollection\Mu
 c:\users\alton\documents\visual studio 2015\Projects\MunicipalTrashCollection\MunicipalTrashCollection\obj\Debug\MunicipalTrashCollection.Migrations.SeedUsers.resources
 c:\users\alton\documents\visual studio 2015\Projects\MunicipalTrashCollection\MunicipalTrashCollection\obj\Debug\MunicipalTrashCollection.Migrations.SeedAdminUser.resources
 C:\Users\Alton\documents\visual studio 2015\Projects\MunicipalTrashCollection\MunicipalTrashCollection\obj\Debug\MunicipalTrashCollection.Migrations.AddedBalanceToCustomer.resources
+C:\Users\Alton\documents\visual studio 2015\Projects\MunicipalTrashCollection\MunicipalTrashCollection\obj\Debug\MunicipalTrashCollection.Migrations.AddedFieldsToDay.resources
+C:\Users\Alton\documents\visual studio 2015\Projects\MunicipalTrashCollection\MunicipalTrashCollection\obj\Debug\MunicipalTrashCollection.Migrations.ChangedFieldsInDay.resources

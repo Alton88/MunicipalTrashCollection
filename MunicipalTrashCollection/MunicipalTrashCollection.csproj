@@ -224,6 +224,14 @@
     <Compile Include="Migrations\201610230151237_AddedBalanceToCustomer.Designer.cs">
       <DependentUpon>201610230151237_AddedBalanceToCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610241239530_AddedFieldsToDay.cs" />
+    <Compile Include="Migrations\201610241239530_AddedFieldsToDay.Designer.cs">
+      <DependentUpon>201610241239530_AddedFieldsToDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610241247342_ChangedFieldsInDay.cs" />
+    <Compile Include="Migrations\201610241247342_ChangedFieldsInDay.Designer.cs">
+      <DependentUpon>201610241247342_ChangedFieldsInDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -334,6 +342,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610230151237_AddedBalanceToCustomer.resx">
       <DependentUpon>201610230151237_AddedBalanceToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241239530_AddedFieldsToDay.resx">
+      <DependentUpon>201610241239530_AddedFieldsToDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610241247342_ChangedFieldsInDay.resx">
+      <DependentUpon>201610241247342_ChangedFieldsInDay.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

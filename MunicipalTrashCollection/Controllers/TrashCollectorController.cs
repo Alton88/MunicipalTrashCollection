@@ -24,8 +24,7 @@ namespace MunicipalTrashCollection.Controllers
         public ActionResult Route(Address routeZip)
         {
 
-            //var pickUpDay = DateTime.Now.DayOfWeek.ToString();
-            string pickUpDay = "Monday";
+            var pickUpDay = DateTime.Now.DayOfWeek.ToString();
             
             var addresses = db.Addresses.Include(a => a.Customer).Include(x => x.Day).ToList();
             List<Address> stops = new List<Address>();

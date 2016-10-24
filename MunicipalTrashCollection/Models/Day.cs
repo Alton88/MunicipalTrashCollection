@@ -9,6 +9,9 @@ namespace MunicipalTrashCollection.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public DateTime? PickUpDateChange { get; set; }
+        public DateTime? StartVacation { get; set; }
+        public DateTime? EndVacation { get; set; }
 
         public enum DayList
         {

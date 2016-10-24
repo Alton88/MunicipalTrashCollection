@@ -32,18 +32,26 @@ namespace MunicipalTrashCollection.Controllers
 
             return View();
         }
-        public ActionResult EditPickUpInfo(Day day)
+        public ActionResult EditPickUpInfo(int? id)
         {
 
             return View();
         }
+        public ActionResult EditPickUpInfo(Customer customer)
+        {
+
+            return View();
+        }
+        
+
         public ActionResult EditCustomerDay(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Customer customer = db.Customers.Find(id);
+            var customer = db.Addresses.Include(a => a.Customer).Include(d => d.Day).Single(c => c.Customer.Id == id);
+
             if (customer == null)
             {
                 return HttpNotFound();
