@@ -42,8 +42,28 @@ namespace MunicipalTrashCollection.Controllers
 
             return View();
         }
-        
+        [HttpGet]
+        public ActionResult TempPickUpDay(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var customer = db.Addresses.Include(a => a.Customer).Include(d => d.Day).Single(c => c.Customer.Id == id);
 
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
+        [HttpPost]
+        public ActionResult TempPickUpDay(Day pickUpDate)
+        {
+            
+            return Content(pickUpDate.PickUpDateChange.ToString() + "Stuff");
+        }
+        [HttpGet]
         public ActionResult EditCustomerDay(int? id)
         {
             if (id == null)
@@ -57,6 +77,17 @@ namespace MunicipalTrashCollection.Controllers
                 return HttpNotFound();
             }
             return View(customer);
+        }
+        [HttpPost]
+        public ActionResult EditCustomerDay(Address address)
+        {
+            var userEmail = User.Identity.Name;
+            var customer = db.Addresses.Include(a => a.Customer).Include(d => d.Day).Single(c => c.Customer.EmailAddress == userEmail);
+            customer.Day.Name = address.Day.Days.ToString();
+            var dateChange = customer.Day.Name;
+
+            db.SaveChanges();
+            return View("Index",customer);
         }
     }
 }
