@@ -32,15 +32,8 @@ namespace MunicipalTrashCollection.Controllers
 
             return View();
         }
-        public ActionResult Edit(int? id)
+        public ActionResult EditPickUpInfo(Day day)
         {
-            //[Bind(Include = "Id,FirstName,LastName,PhoneNumber,EmailAddress")] Customer customer
-            if (ModelState.IsValid)
-            {
-                //db.Customers.Add(customer);
-                //db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
             return View();
         }

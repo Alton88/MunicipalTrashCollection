@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Globalization;
-using System.Net;
 using MunicipalTrashCollection.Models;
+using Microsoft.AspNet.Identity;
+using System.Net;
 namespace MunicipalTrashCollection.Controllers
 {
     public class TrashCollectorController : Controller
@@ -20,16 +21,21 @@ namespace MunicipalTrashCollection.Controllers
             return View("ReadOnly");
         }
         [HttpPost]
-        public ActionResult Route(Address address)
+        public ActionResult Route(Address routeZip)
         {
-            if (address.ZipCode == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            List<Address> addresses = db.Addresses.ToList();
+
+            //var pickUpDay = DateTime.Now.DayOfWeek.ToString();
+            string pickUpDay = "Monday";
+            
+            var addresses = db.Addresses.Include(a => a.Customer).Include(x => x.Day).ToList();
             List<Address> stops = new List<Address>();
-            foreach (Address a in addresses) {
-                if (a.ZipCode == address.ZipCode) { stops.Add(address); }
+            foreach (Address address in addresses) {
+                if (address.ZipCode == routeZip.ZipCode && pickUpDay == address.Day.Name && address.IsActive)
+                {
+                    stops.Add(address);
+                    //address.Customer.Balance += 25;
+                }
+                
             }
             return View(stops);
 

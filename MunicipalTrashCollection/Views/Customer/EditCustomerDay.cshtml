@@ -1,20 +1,25 @@
-﻿
+﻿@model MunicipalTrashCollection.Models.Day
+
 @{
     ViewBag.Title = "EditCustomerDay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-<div class="form-inline">
-    <h3>Change pickup date for one week</h3>
-    <input type="date">
+
+
+@using (Html.BeginForm("EditPickUpInfo", "Customer"))
+{
+    <div class="form-inline">
+        <h3>Change pickup date for one week</h3>
+        <input type="date">
     </div>
 
-<div class="form-inline">
-    <h3>Specify a period of time that I don't want pickup </h3>
-    <input type="date">
-</div>
-
+    <div class="form-inline">
+        <h3>Specify a period of time that I don't want pickup </h3>
+        <input type="date">
+    </div>
+}
 
 @*<div class="form-group">
     <div class="col-md-offset-2 col-md-10">
