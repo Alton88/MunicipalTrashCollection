@@ -17,8 +17,9 @@ namespace MunicipalTrashCollection.Controllers
         // GET: Administrator
         public ActionResult Index()
         {
+            var customer = db.Addresses.Include(a => a.Customer).Include(d => d.Day);
             if (User.IsInRole("Admin"))
-            return View(db.Customers.ToList());
+            return View(customer.ToList());
             return View("ReadOnly");
         }
 

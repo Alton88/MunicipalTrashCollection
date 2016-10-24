@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MunicipalTrashCollection.Models.Customer>
+﻿@model IEnumerable<MunicipalTrashCollection.Models.Address>
 
 @{
     ViewBag.Title = "Index";
@@ -13,33 +13,38 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.Customer.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PhoneNumber)
+            @Html.DisplayNameFor(model => model.Customer.PhoneNumber)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EmailAddress)
+            @Html.DisplayNameFor(model => model.Customer.EmailAddress)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
+            @Html.DisplayFor(modelItem => item.Customer.FirstName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.LastName)
+            @Html.DisplayFor(modelItem => item.Customer.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PhoneNumber)
+            @Html.DisplayFor(modelItem => item.Customer.PhoneNumber)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EmailAddress)
+            @Html.DisplayFor(modelItem => item.Customer.EmailAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZipCode)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

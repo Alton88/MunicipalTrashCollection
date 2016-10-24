@@ -61,7 +61,7 @@ namespace MunicipalTrashCollection.Controllers
         public ActionResult TempPickUpDay(Day pickUpDate)
         {
             
-            return Content(pickUpDate.PickUpDateChange.ToString() + "Stuff");
+            return Content(pickUpDate.PickUpDateChange.ToString());
         }
         [HttpGet]
         public ActionResult EditCustomerDay(int? id)
